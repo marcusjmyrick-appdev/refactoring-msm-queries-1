@@ -10,4 +10,10 @@
 #  movie_id   :integer
 #
 class Character < ApplicationRecord
+  belongs_to :movie
+
+  def movie
+    Movie.find(movie_id)
+  end
 end
+

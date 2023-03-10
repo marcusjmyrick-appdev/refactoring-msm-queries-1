@@ -13,4 +13,10 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
+  belongs_to :director
+  
+  # Define an instance method to get the director for this movie
+  def director
+    Director.find_by(id: director_id)
+  end
 end
